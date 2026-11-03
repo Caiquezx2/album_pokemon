@@ -1,8 +1,0 @@
-{
-  "name": "pokedex-album",
-  "version": "1.0.0",
-  "description": "Servidor Node.js da Pokedex Album",
-  "main": "server.js",
-  "scripts": { "start": "node server.js" },
-  "dependencies": { "express": "^4.21.2" }
-}
