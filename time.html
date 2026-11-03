@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hall da Fama - Pokédex Album</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="pagina-time">
+  <header class="topo">
+    <div class="header-conteudo">
+      <a class="marca" href="index.html"><span class="mini-pokebola"></span><span>POKÉDEX <b>ALBUM</b></span></a>
+      <nav><ul class="menu"><li><a href="index.html">Pokédex</a></li><li><a href="time.html" class="ativo">Meu Time</a></li><li><a href="cadastro.html">Cadastro</a></li><li><a href="login.html">Treinador</a></li></ul></nav>
+    </div>
+  </header>
+
+  <main class="hall-main">
+    <section class="hall-cabecalho">
+      <span class="etiqueta">REGISTRO OFICIAL • KANTO</span>
+      <h1>HALL DA <em>FAMA</em></h1>
+      <p>Os parceiros que fazem parte da sua jornada.</p>
+      <div class="contador-hall"><span id="contadorTime">0 / 6</span><small>POKÉMON REGISTRADOS</small></div>
+    </section>
+
+    <section class="hall-moldura">
+      <div class="hall-linha-topo"><span>LEAGUE CHAMPION RECORD</span><span>★ KANTO ★</span></div>
+      <div id="gridTime" class="time-grid"></div>
+      <p id="timeVazio" class="time-vazio">Sua jornada ainda não tem registros.<br>Escolha seus parceiros na Pokédex!</p>
+      <div class="hall-linha-base"><span>CAMPEÃO DA LIGA</span><span>REGISTRO DE EQUIPE</span></div>
+    </section>
+
+    <a href="index.html" class="botao-principal botao-voltar">← Voltar à Pokédex</a>
+  </main>
+
+  <footer><span class="mini-pokebola"></span><p>POKÉDEX ALBUM • HALL DA FAMA</p><a href="index.html">CONTINUAR JORNADA →</a></footer>
+  <script src="time.js"></script>
+</body>
+</html>
