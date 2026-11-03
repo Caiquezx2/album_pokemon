@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Pokémon - Pokédex Album</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="pagina-cadastro">
+  <header class="topo">
+    <div class="header-conteudo">
+      <a class="marca" href="index.html"><span class="mini-pokebola"></span><span>POKÉDEX <b>ALBUM</b></span></a>
+      <nav><ul class="menu"><li><a href="index.html">Pokédex</a></li><li><a href="time.html">Meu Time</a></li><li><a href="cadastro.html" class="ativo">Cadastro</a></li><li><a href="login.html">Treinador</a></li></ul></nav>
+    </div>
+  </header>
+  <main class="cadastro-main">
+    <section class="cadastro-intro">
+      <span class="etiqueta">CENTRAL DO TREINADOR</span>
+      <h1>CADASTRE E <em>GERENCIE</em></h1>
+      <p>A Pokédex principal continua com os 151 Pokémon de Kanto. Aqui você pode pesquisar Pokémon de qualquer geração e montar seu próprio catálogo.</p>
+    </section>
+
+    <section class="cadastro-painel">
+      <div class="cadastro-titulo"><span class="etiqueta">POKÉAPI • TODAS AS GERAÇÕES</span><h2>Pesquisar Pokémon</h2><p>Digite o nome ou o número de um Pokémon. Os resultados só aparecem quando você pesquisar.</p></div>
+      <form id="formPesquisa" class="formulario-pokemon">
+        <div class="campo campo-pesquisa"><label for="pesquisaApi">Nome ou número do Pokémon</label><input id="pesquisaApi" type="text" placeholder="Ex.: pikachu ou 25" required><small id="erroPesquisa" class="mensagem-erro"></small></div>
+        <button class="botao-principal" type="submit">Pesquisar na API</button>
+      </form>
+      <p id="estadoApi" class="estado-api" aria-live="polite"></p>
+      <div id="resultadoApi" class="resultado-api"></div>
+    </section>
+
+    <section class="cadastro-painel">
+      <div class="cadastro-titulo"><span class="etiqueta">SEU CATÁLOGO PARTICULAR</span><h2 id="tituloFormulario">Cadastrar Pokémon</h2><p>Use o resultado da pesquisa para preencher os dados ou faça o cadastro manualmente.</p></div>
+      <form id="formPokemon" class="form-grid" novalidate>
+        <input type="hidden" id="pokemonId">
+        <input type="hidden" id="pokemonApiId">
+        <div class="campo"><label for="nomePokemon">Nome</label><input id="nomePokemon" type="text" maxlength="30" placeholder="Nome do Pokémon" required><small id="erroNome" class="mensagem-erro"></small></div>
+        <div class="campo"><label for="tipoPokemon">Tipo</label><select id="tipoPokemon" required><option value="">Selecione o tipo</option><option>Normal</option><option>Fogo</option><option>Água</option><option>Planta</option><option>Elétrico</option><option>Gelo</option><option>Lutador</option><option>Veneno</option><option>Terrestre</option><option>Voador</option><option>Psíquico</option><option>Inseto</option><option>Pedra</option><option>Fantasma</option><option>Dragão</option><option>Sombrio</option><option>Aço</option><option>Fada</option></select><small id="erroTipo" class="mensagem-erro"></small></div>
+        <div class="campo"><label for="regiaoPokemon">Geração / Região</label><select id="regiaoPokemon" required><option value="">Selecione a região</option><option>Kanto</option><option>Johto</option><option>Hoenn</option><option>Sinnoh</option><option>Unova</option><option>Kalos</option><option>Alola</option><option>Galar</option><option>Paldea</option><option>Outra</option></select><small id="erroRegiao" class="mensagem-erro"></small></div>
+        <div class="campo"><label for="nivelPokemon">Nível (1 a 100)</label><input id="nivelPokemon" type="number" min="1" max="100" placeholder="Ex.: 25" required><small id="erroNivel" class="mensagem-erro"></small></div>
+        <div class="campo campo-largo"><label for="descricaoPokemon">Descrição</label><textarea id="descricaoPokemon" rows="3" maxlength="180" placeholder="Conte algo sobre esse Pokémon"></textarea><small id="erroDescricao" class="mensagem-erro"></small></div>
+        <div class="campo campo-largo"><label for="imagemPokemon">URL da imagem (opcional)</label><input id="imagemPokemon" type="url" placeholder="https://..."><small id="erroImagem" class="mensagem-erro"></small></div>
+        <div class="acoes-form campo-largo"><button class="botao-principal" type="submit" id="salvarPokemon">Salvar Pokémon</button><button class="botao-secundario" type="button" id="cancelarEdicao" hidden>Cancelar edição</button><span id="mensagemFormulario" aria-live="polite"></span></div>
+      </form>
+    </section>
+
+    <section class="cadastro-painel">
+      <div class="cadastro-titulo"><span class="etiqueta">CRUD • LOCALSTORAGE</span><h2>Meus Pokémon</h2><p id="totalCadastrados">0 Pokémon cadastrados</p></div>
+      <div id="listaCadastrados" class="lista-cadastrados"></div>
+      <p id="listaVazia" class="lista-vazia">Nenhum Pokémon cadastrado ainda.</p>
+    </section>
+  </main>
+  <footer><span class="mini-pokebola"></span><p>POKÉDEX ALBUM • CATÁLOGO DO TREINADOR</p><a href="index.html">VOLTAR À POKÉDEX ↑</a></footer>
+  <script src="cadastro.js"></script>
+</body>
+</html>
